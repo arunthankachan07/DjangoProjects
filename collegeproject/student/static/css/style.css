@@ -1,0 +1,25 @@
+
+.main{
+    text-align:center;
+    width:100%;
+    border:1px hidden black;
+    background-color:white;
+    margin-top:25%;
+    border-radius:10px;
+
+
+}
+body{
+background-image: url("{% static 'images/bg_body.jpg' %}");
+}
+
+input{
+width:90%;
+margin-bottom:5%;
+
+
+}
+.txtin{
+width:60%;
+color:red;
+}
