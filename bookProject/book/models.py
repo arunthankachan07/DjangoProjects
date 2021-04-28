@@ -17,3 +17,13 @@ class Book(models.Model):
 #>>> books
 #>>> book=Book.objects.get(id=1)
 #print(book.book_name)
+
+
+#select all bokks price >190
+#  books=Book.objects.filter(price__gte=190)
+# >>> books
+# <QuerySet [<Book: wings of fire>, <Book: The Alchemist>]>
+# >>> books=Book.objects.filter(price__lte=190)
+# >>> books
+# <QuerySet []>
+
