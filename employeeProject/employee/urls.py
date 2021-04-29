@@ -1,4 +1,4 @@
-"""bookProject URL Configuration
+"""employeeProject URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from .views import createBook,list_all_book,book_details,delete_book,update_book
+from .views import createEmployee,employee_list,employee_view,employee_delete,employee_update
 
 urlpatterns = [
-    path("create",createBook,name="createbook"),
-    path("list",list_all_book,name="list"),
-    path("detail/<int:id>",book_details,name="detail"),
-    path("delete/<int:id>",delete_book,name="deletebook"),
-    path("edit/<int:id>", update_book, name="bookupdate")
+    path("create",createEmployee,name="createemployee"),
+    path("list",employee_list,name="emp_list"),
+    path("view/<int:id>", employee_view, name="emp_view"),
+    path("delete/<int:id>", employee_delete, name="emp_delete"),
+    path("edit/<int:id>", employee_update, name="emp_update")
 
 ]

@@ -45,3 +45,34 @@ def delete_book(request,id):
     book.delete()
     return redirect("list")
 
+
+def update_book(request,id):
+    book=Book.objects.get(id=id)
+    book_det={
+        "name":book.book_name,
+        "author":book.author,
+        "price":book.price,
+        "pages":book.pages,
+        "category":book.category
+    }
+    form=BookForm(initial=book_det);
+    context={}
+    context["form"]=form
+    if request.method == "POST":
+        form = BookForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data.get("name")
+            author = form.cleaned_data.get("author")
+            price = form.cleaned_data.get("price")
+            pages = form.cleaned_data.get("pages")
+            category = form.cleaned_data.get("category")
+            book.book_name=name
+            book.author=author
+            book.price=price
+            book.pages=pages
+            book.category=category
+            book.save()
+            return redirect("list")
+
+    return render(request,"book/edit_book.html",context)
+

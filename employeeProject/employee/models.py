@@ -1,13 +1,18 @@
-from django.db import models
+from django.db import  models
 
-# Create your models here.
-class Employee(models.Model):
-    name=models.CharField(max_length=150)
+class Employees(models.Model):
+    emp_name=models.CharField(max_length=120)
     desig=models.CharField(max_length=100)
     salary=models.IntegerField()
+    location=models.CharField(max_length=120)
 
     def __str__(self):
-        return self.name
+        return self.emp_name
+
+
+
+
+
 
 
 

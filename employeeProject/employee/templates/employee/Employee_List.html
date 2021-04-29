@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+
+</head>
+<body class="emplist">
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="main_emplist">
+                <div><h2 class="h2emp">Employee List</h2></div>
+            <div class="createlink">
+                <a class="btn btn-dark" href="{%url 'createemployee'%}">Create Employee</a>
+             </div>
+            <div>
+                <table class="table table-dark table-striped">
+                    <tr>
+                        <td class="table_head">Employee Name</td>
+                        <td class="table_head">Designation</td>
+                        <td class="table_head">Salary</td>
+                        <td class="table_head">Location</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    {%for emp in employees%}
+                    <tr>
+                        <td>{{emp.emp_name}}</td>
+                        <td>{{emp.desig}}</td>
+                        <td>{{emp.salary}}</td>
+                        <td>{{emp.location}}</td>
+                        <td><a href="{%url 'emp_view' emp.id%}" class="btn btn-success">View</a></td>
+                         <td><a href="{%url 'emp_update' emp.id%}" class="btn btn-success">Update</a></td>
+                        <td><a href="{%url 'emp_delete' emp.id%}" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+
+
+                </table>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

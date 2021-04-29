@@ -1,4 +1,7 @@
-
+.createbody{
+background:url('../images/bg_emp002.jpg')no-repeat center fixed;
+background-size: cover;
+}
 .main{
     text-align:center;
     width:100%;
@@ -8,10 +11,6 @@
     margin-left:10%;
     border-radius:10px;
     color:white;
-}
-body{
-background: url('../images/book_bg001.jpg') no-repeat center fixed;
-background-size: cover;
 }
 
 .text_inp{
@@ -32,7 +31,7 @@ background:transparent;
 width:92%;
 margin-bottom:5%;
 background-color: white;
-color: brown;
+color: blue;
 border: hidden;
 font-size:25px;
 font-weight: 700;
@@ -40,31 +39,41 @@ font-family: Arial, Helvetica, sans-serif;
 cursor: pointer;
 }
 .btn_submit:hover{
-                background-color: brown;
+                background-color: blue;
                 color: white;
             }
 h2{
-color:brown;
+color:blue;
 background-color:white;
 }
 
-.booklist{
-    text-align:center;
+.emplist{
+background:url('../images/bg_emp.jpg')no-repeat center fixed;
+background-size: cover;
+}
+
+.main_emplist{
+
     width:100%;
-    border:3px solid white;
+    border:3px solid #37373d;
     background-color:transparent;
-    margin-top:10%;
+    margin-top:5%;
     border-radius:10px;
     color:white;
 }
+
+.h2emp{
+color:white;
+background-color:#37373d;
+text-align:center;
+}
+
 .table_head{
 font-size:20px;
 font-weight: 500;
-color:white;
 }
 
-.bodylist{
-background: url('../images/book_bg002.jpg') no-repeat center fixed;
-background-size: cover;
-
+.createlink{
+margin-left:5%;
+margin-bottom:1%;
 }
