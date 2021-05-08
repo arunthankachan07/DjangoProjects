@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Product</td>
+        <td>Price</td>
+        <td>Status</td>
+    </tr>
+    {% for order in orders%}
+    <tr>
+        <td>{{order.product}}</td>
+        <td>{{order.product.price}}</td>
+        <td>{{order.status}}</td>
+        <td><a href="{%url 'cancel_order' order.id%}">Cancel Order</a></td>
+    </tr>
+    {%endfor%}
+</table>
+</body>
+</html>

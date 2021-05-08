@@ -15,25 +15,25 @@
      <link rel="stylesheet" href="{%static 'css/style.css'%}">
 </head>
 <body class="createbody">
-
+<form method="post">
 <div class="container">
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
             <div class="main">
                 <h2>Todo Update</h2>
-                <form method="post">
+
                     {%csrf_token%}
                     {{form.as_p}}
                     <input type="submit" value="UPDATE" class="btn btn-dark btn_submit">
-                </form>
+
 
             </div>
         </div>
         <div class="col-3"></div>
     </div>
 </div>
-
+</form>
 
 
 </body>

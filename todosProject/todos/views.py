@@ -16,6 +16,9 @@ def createTodos(request):
             todo = Todos(task=task, date=date, status=status)
             todo.save()
             return redirect("listtodo")
+        form = TodosForm(request.POST)
+        context["form"] = form
+        return render(request,"todos/create_todos.html",context)
     return render(request,"todos/create_todos.html",context)
 
 
@@ -54,10 +57,13 @@ def update_todo(request,id):
             task = form.cleaned_data.get("task")
             date = form.cleaned_data.get("date")
             status = form.cleaned_data.get("status")
-            todo.emp_name=task
+            todo.task=task
             todo.date=date
             todo.status=status
             todo.save()
             return redirect("listtodo")
+        else:
+            context["form"]=form
+            return render(request, "todos/update_todo.html", context)
 
     return render(request,"todos/update_todo.html",context)

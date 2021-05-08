@@ -16,6 +16,7 @@
 
 <div>
     <a href="{%url 'createbook'%}" class="btn btn-success">Create New Book</a>
+     <a href="{%url 'userhome'%}" class="btn btn-success">Home</a>
 </div>
 <table class="table" style="color:white">
 
@@ -36,9 +37,12 @@
         <td>{{book.price}}</td>
         <td>{{book.pages}}</td>
         <td>{{book.category}}</td>
+
         <td><a href="{%url 'detail' book.id%}" class="btn btn-success">View</a></td>
+        {% if request.user.is_superuser %}
         <td><a href="{%url 'deletebook' book.id%}" class="btn btn-danger">Delete</a></td>
         <td><a href="{%url 'bookupdate' book.id%}" class="btn btn-success">Update</a></td>
+        {% endif %}
     </tr>
 
     {% endfor %}
