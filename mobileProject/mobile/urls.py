@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from .views import index,listmobile,add_product,mobile_detail,update_mobile,registration,login_user,\
-    signout,mobile_delete,item_order,view_my_orders,order_cancel
+    signout,mobile_delete,item_order,view_my_orders,order_cancel,view_cart,add_to_cart,\
+    remove_cart_item,change_password
+
 
 
 urlpatterns = [
@@ -32,6 +34,10 @@ path("logout",signout,name="signout"),
 path("delete/<int:id>",mobile_delete,name="delete"),
 path("itemorderd/<int:id>",item_order,name="order"),
 path("vieworder",view_my_orders,name="vieworder"),
-path("cancelorder/<int:id>",order_cancel,name="cancel_order")
+path("cancelorder/<int:id>",order_cancel,name="cancel_order"),
+path("addtocart/<int:id>",add_to_cart,name="addtocart"),
+path("viewcart",view_cart,name="viewcart"),
+path("removeitem/<int:id>",remove_cart_item,name="removeitem"),
+path("changepassword",change_password,name="changepassword"),
 
 ]

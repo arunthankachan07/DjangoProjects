@@ -10167,3 +10167,54 @@ background-size: cover;
     border-radius:10px;
     color:black;
 }
+.navbar.navbar-1 .navbar-toggler-icon {
+background-image: url('https://mdbcdn.b-cdn.net/img/svg/hamburger6.svg?color=000');
+}
+
+.btn {
+  background-color: white; /* Blue background */
+  border: none; /* Remove borders */
+  color: black; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: green;
+}
+
+.orderview{
+    text-align:center;
+    width:100%;
+    border:3px solid white;
+    background-color:transparent;
+    margin-top:10%;
+    border-radius:10px;
+    color:white;
+}
+.cartview{
+    text-align:left;
+    width:100%;
+    border:3px solid white;
+    background-color:transparent;
+
+    border-radius:10px;
+    color:white;
+}
+.text_inp_choice{
+color:white;
+font-size: 17px;
+font-weight: 500;
+width:92%;
+margin-top:5%;
+border: 0;
+border-bottom: 2px solid white;
+outline: 0;
+background-black;
+}
+ ::placeholder {
+    color: white;
+    }
+

@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime,timezone
 
 # Create your models here.
 
@@ -22,3 +23,18 @@ class Order(models.Model):
     )
     status=models.CharField(max_length=100,choices=choices,default="ordered")
     user=models.CharField(max_length=120)
+
+
+
+
+class Carts(models.Model):
+    product=models.ForeignKey(Product,on_delete=models.CASCADE)
+    qty=models.PositiveIntegerField(default=1)
+    price_total=models.PositiveIntegerField(editable=False, blank=True, null=True)
+    user=models.CharField(max_length=100)
+
+
+    def save(self, *args, **kwargs):
+        self.price_total = self.product.price * self.qty
+
+        super(Carts, self).save(*args, **kwargs)
